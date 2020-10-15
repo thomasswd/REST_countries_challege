@@ -31,13 +31,6 @@ body {
 }
 
 .header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 100vw;
   text-align: center;
   background: #2b3945;
   -webkit-box-shadow: 0px 1px 5px 0px rgba(58, 4, 4, 0.2);
@@ -45,13 +38,14 @@ body {
   margin-bottom: 1rem;
 }
 
-.container, .container.flex-container {
-  width: 1440px;
+.container {
+  width: 100%;
   height: 5rem;
   padding: 0 5rem;
+  margin: auto;
 }
 
-.flex-container.container {
+.container.flex-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -61,6 +55,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow-x: hidden;
 }
 
 .button-mode {
@@ -71,11 +66,22 @@ body {
   font-size: 1rem;
 }
 
+.button-border {
+  color: white;
+  background: #2b3945;
+  border: none;
+  font-weight: 300;
+  font-size: 1rem;
+  margin-right: 1rem;
+  text-decoration: none;
+  padding: 1rem 1rem;
+  border-radius: 5px;
+}
+
 main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100vw;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -93,6 +99,7 @@ main {
           align-items: center;
   padding: 2rem 0;
   margin-bottom: 1rem;
+  font-size: 1.4rem;
 }
 
 .input-section .input-country {
@@ -147,6 +154,7 @@ main {
 
 .countries {
   background: #202c37;
+  font-size: 1.4rem;
 }
 
 .countries .countries-list {
@@ -164,6 +172,8 @@ main {
   border-radius: 5px;
   -webkit-box-shadow: 0px 1px 5px 0px rgba(58, 4, 4, 0.2);
           box-shadow: 0px 1px 5px 0px rgba(58, 4, 4, 0.2);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .countries .countries-list .country-card-area {
@@ -189,10 +199,94 @@ main {
 
 .countries .countries-list .country-card-brief p {
   margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
   font-weight: 600;
 }
 
 .countries .countries-list .country-card-brief span {
   font-weight: 300;
+}
+
+.countries .countries-list .country-card:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.back {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 10rem;
+}
+
+.back .button-back {
+  text-decoration: none;
+  color: white;
+  font-size: 1.6rem;
+  background: #2b3945;
+  padding: 0.8rem 3rem;
+  border: 5px;
+  -webkit-box-shadow: 0px 1px 5px 0px rgba(58, 4, 4, 0.2);
+          box-shadow: 0px 1px 5px 0px rgba(58, 4, 4, 0.2);
+}
+
+.country-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 1.6rem;
+}
+
+.country-info__flag {
+  width: 50%;
+}
+
+.country-info__flag img {
+  height: 30rem;
+}
+
+.country-info__data {
+  width: 50%;
+  padding: 3rem;
+}
+
+.country-info__data .country-name {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.country-info__data .data-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.country-info__data .data-section p {
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+}
+
+.country-info__data .data-section p span {
+  font-weight: 500;
+}
+
+.country-info__data .border-countries .border-countries-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
 }
 /*# sourceMappingURL=style.css.map */

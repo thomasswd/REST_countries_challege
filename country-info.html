@@ -8,29 +8,58 @@
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
+    <header class="header">
+        <div class="container flex-container">
             <div class="header-title">
-                <h1>Where in the world</h1>
+                <h1>Where in the world?</h1>
             </div>
-            <div class="mode-button">
-                <button>Dark Mode</button>
+            <div class="">
+                <button class="button-mode">Dark Mode</button>
             </div>
-        </header>
-        <main>
-            <div class="back">
-                <a href="" class="button-back">Back</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="back">
+            <a href="./index.html" class="button-back">
+
+                Back
+            </a>
+        </div>
+        <section class="country-info">
+            <div class="country-info__flag">
+                <img src="" alt="">
             </div>
-            <section class="country-info">
-                <div class="country-info__flag">
-                    <img src="" alt="">
+            <div class="country-info__data">
+                <!-- <h1 class="country-name">Belgium</h1>
+                <div class="data-section">
+                    <div class="data-section-1">
+                        <p>Native Name: <span class="native-name"></span></p>
+                        <p>Population: <span class="population"></span></p>
+                        <p>Region: <span class="region"></span></p>
+                        <p>Sub Region: <span class="sub-region"></span></p>
+                        <p>Capital: <span class="capital"></span></p>
+                    </div>
+                    <div class="data-section-2">
+                        <p>Top Level Doamin: <span class="domain"></span></p>
+                        <p>Currencies: <span class="currencies"></span></p>
+                        <p>Languages: <span class="languages"></span></p>
+                    </div>
                 </div>
-                <div class="country-info__data">
-                    
-                </div>
-            </section>
-        </main>
+                <div class="border-countries">
+                    <p>Border Countries: 
+                        <span>
+                            <a>France</a>
+                            <a>Germany</a>
+                            <a>Netherlands</a>
+                        </span>
+                    </p>
+                </div> -->
+            </div>
+        </section>
     </div>
     <i class="fas fa-arrow-left"></i>
+
+    <script src="./countryPage.js"></script>
 </body>
 </html>
