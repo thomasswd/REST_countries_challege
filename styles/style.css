@@ -8,6 +8,12 @@
   width: 1.5rem;
 }
 
+.button-back svg {
+  display: inline;
+  width: 1.5rem;
+  fill: white;
+}
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
