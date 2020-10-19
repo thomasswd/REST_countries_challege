@@ -57,6 +57,10 @@ const createCountryCards = (countryData) => {
 
 countryPromise();
 
+setTimeout(() => {
+    countriesSection.parentElement.classList.remove('page-transition-away');
+}, 1000);
+
 const handleCountrySearch = (e) => {
     const searchQuery = e.target.value;
     countryDataArray.forEach(country => {
@@ -110,7 +114,22 @@ const handleCountryClick = (e) => {
                 localStorage.setItem('countryDataArray', JSON.stringify(countryDataArray))
             }
         });
+    } else if (e.target.matches('.country-card')) {
+        countryDataArray.forEach(country => {
+            if(country.name === e.target.children[0].children[1].children[0].innerText) {
+                console.log(country)
+                localStorage.setItem('countryStorage', JSON.stringify(country));
+                localStorage.setItem('countryDataArray', JSON.stringify(countryDataArray))
+            }
+        });
     }
+
+    countriesSection.parentElement.classList.add('page-transition-away');
+
+    setTimeout(() => {
+        const countryURL = countriesSection.children[0].children[0].getAttribute("href");
+        window.location = countryURL;
+    }, 1000)
 }
 
 //event listeners

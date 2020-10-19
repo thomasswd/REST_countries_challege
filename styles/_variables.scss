@@ -1,12 +1,13 @@
 $primary-color: hsl(209, 23%, 22%);
 $secondary-color: hsl(207, 26%, 17%);
 $tertiary-color: hsl(0, 0%, 100%);
+$tertiary-color-1: rgba(255, 255, 255, 0.8);
 $main-font: 'Nunito Sans', sans-serif;
 
 //breakpoints
 $desktop-width: 1440px;
 $mobile-width: 375px;
 
-$rounded-corners: 5px;
+$rounded-corners: 10px;
 
 $shadow-1: 0px 1px 5px 0px rgba(58, 4, 4, 0.2);

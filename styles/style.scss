@@ -146,6 +146,8 @@ main {
 .countries {
     background: $secondary-color;
     font-size: 1.4rem;
+    position: relative;
+    transition: all 0.5s;
 
     .countries-list {
         display: grid;
@@ -158,16 +160,20 @@ main {
             background: $primary-color;
             border-radius: $rounded-corners;
             box-shadow: $shadow-1;
+            border: 3px solid rgba(0,0,0,0);
             transition: all 0.2s;
+            justify-self: center;
 
             &-area {
                 text-decoration: none;
                 width: 100%;
+                height: 50%;
                 color: $tertiary-color;
             }      
             
             &-flag {
                 width: 100%;
+                height: 50%;
                 overflow: hidden;
                 border-top-left-radius: $rounded-corners;
                 border-top-right-radius: $rounded-corners;
@@ -192,10 +198,20 @@ main {
 
         .country-card:hover {
             transform: scale(1.05);
-
+            border: 3px solid $tertiary-color-1;
         }
     }
 }
+
+.page-transition-away {
+    transform: translateY(10rem);
+    opacity: 0%;
+}
+
+// .page-transition-into {
+//     transform: translateY(rem);
+//     opacity: 0%;
+// }
 
 .back {
     display:flex;
@@ -208,8 +224,16 @@ main {
         font-size: 1.6rem;
         background: $primary-color;
         padding: 0.8rem 3rem;
-        border: $rounded-corners;
+        border: 3px solid transparent;
+        border-radius: $rounded-corners;
         box-shadow: $shadow-1;
+        transition: all 0.2s;
+    }
+
+    .button-back:hover {
+        //transform: scale(1.05);
+        border: 3px solid $tertiary-color-1;
+        border-radius: $rounded-corners;
     }
 }
 
@@ -218,12 +242,14 @@ main {
     display: flex;
     justify-content: space-between;
     font-size: 1.6rem;
+    transition: all 0.5s;
     
     &__flag {
 
         width: 50%;
         img {
             height: 30rem;
+            width: 50rem;
         }
     }
 
@@ -256,6 +282,8 @@ main {
         }
 
         .border-countries {
+            display: flex;
+            align-items: center;
 
             .border-countries-list {
                 display:flex;
@@ -263,6 +291,97 @@ main {
                 // line-height: 2;
                 align-content: space-between;
             }
+            a {
+                transition: all 0.2s;
+                border: 1px solid transparent;
+            }
+
+            a:hover {
+                border: 1px solid $tertiary-color-1;
+            }
         }
+    }
+}
+
+.country-info.transition {
+    transform: translateY(10rem);
+    opacity: 0%;
+}
+
+@media (max-width: 1024px) {
+    .country-info {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__flag {
+            width: 100%;
+            display:flex;
+            justify-content: center;
+
+            img {
+                width: 60rem;
+                height: auto;
+            }
+        }
+
+        &__data {
+            width: 100%;
+        }
+    }
+
+
+}
+
+@media (max-width: 769px) {
+    html {
+        font-size: 8px;
+    }
+
+    .country-info {
+
+        &__flag {
+            img {
+                
+            }
+        }
+
+        &__data {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+@media (max-width: 481px) {
+    .country-info {
+
+        &__flag {
+            img {
+                width: 40rem;
+            }
+        }
+
+        &__data {
+            .data-section {
+                display: flex;
+                flex-direction: column;
+                width: 100vw;
+
+                p {
+                    margin-bottom: 1rem;
+                }
+
+                &-1 {
+                    margin-bottom: 2rem;
+                }
+            }
+            
+        }
+    }
+
+    .input-section {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }

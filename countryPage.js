@@ -1,8 +1,10 @@
 let thisCountryData;
 let countryDataArray;
 
+const countryInfo = document.querySelector('.country-info');
 const countryFlag = document.querySelector('.country-info__flag');
 const countryInfoData = document.querySelector('.country-info__data');
+const backButton = document.querySelector('.button-back')
 
 const getCountryData = async() => {
     thisCountryData = JSON.parse(localStorage.getItem('countryStorage'));
@@ -53,7 +55,7 @@ const insertHTML = () => {
                         <p>Capital: <span class="capital">${thisCountryData.capital}</span></p>
                     </div>
                     <div class="data-section-2">
-                        <p>Top Level Doamin: <span class="domain">${thisCountryData.topLevelDomain}</span></p>
+                        <p>Top Level Domain: <span class="domain">${thisCountryData.topLevelDomain}</span></p>
                         <p>Currencies: <span class="currencies">${thisCountryData.currencies[0].name}</span></p>
                         <p>Languages: <span class="languages">${languageList}</span></p>
                     </div>
@@ -82,17 +84,34 @@ const insertHTML = () => {
 }
 
 const handleCountryClick = (e) => {
-    //e.preventDefault();
+   e.preventDefault();
+
+    countryInfoData.parentElement.classList.add('transition')
+
     const borderCountry = e.target.innerText;
     countryDataArray.forEach(country => {
         if(country.name === borderCountry) {
             localStorage.setItem('countryStorage', JSON.stringify(country));
         }
     });
+
+    countryInfo.classList.add('page-transition-away');
+
+    setTimeout(() => {
+        window.location = './country-info.html';
+    }, 1000)
 };
 
 getCountryData();
 
 insertHTML();
 
+countryInfo.classList.remove('page-transition-away');
+
 countryInfoData.children[2].children[0].children[0].addEventListener('click', handleCountryClick)
+backButton.addEventListener('click', () => {
+    countryInfo.classList.add('page-transition-away');
+    setTimeout(() => {
+        window.location = './index.html';
+    }, 500)
+})
