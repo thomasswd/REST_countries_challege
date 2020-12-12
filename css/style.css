@@ -171,6 +171,9 @@ main {
   display: grid;
   -ms-grid-columns: (minmax(100px, 350px))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(100px, 350px));
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   grid-gap: 10rem;
   list-style: none;
   width: 100%;
@@ -266,9 +269,6 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   font-size: 1.6rem;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
@@ -426,4 +426,3 @@ main {
     margin-bottom: 2rem;
   }
 }
-/*# sourceMappingURL=style.css.map */

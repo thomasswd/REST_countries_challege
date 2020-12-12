@@ -89,27 +89,22 @@ const handleCountryClick = (e) => {
 
         countryDataArray.forEach(country => {
             if(country.name === countryName) {
-                console.log(country)
                 localStorage.setItem('countryStorage', JSON.stringify(country));
                 localStorage.setItem('countryDataArray', JSON.stringify(countryDataArray))
-                console.log('done')
             }
         });
     } else if(clickedEl.matches('.country-card-brief')) {
         console.log(clickedEl.parentElement.children[1].children[0].innerText)
         countryDataArray.forEach(country => {
             if(country.name === clickedEl.parentElement.children[1].children[0].innerText) {
-                console.log(country)
                 localStorage.setItem('countryStorage', JSON.stringify(country));
                 localStorage.setItem('countryDataArray', JSON.stringify(countryDataArray))
-                console.log('done')
             }
         });
     } else if (clickedEl.matches('p')) {
         console.log(clickedEl.parentElement.children[0].innerText)
         countryDataArray.forEach(country => {
             if(country.name === clickedEl.parentElement.children[0].innerText) {
-                console.log(country)
                 localStorage.setItem('countryStorage', JSON.stringify(country));
                 localStorage.setItem('countryDataArray', JSON.stringify(countryDataArray))
             }
@@ -117,7 +112,6 @@ const handleCountryClick = (e) => {
     } else if (e.target.matches('.country-card')) {
         countryDataArray.forEach(country => {
             if(country.name === e.target.children[0].children[1].children[0].innerText) {
-                console.log(country)
                 localStorage.setItem('countryStorage', JSON.stringify(country));
                 localStorage.setItem('countryDataArray', JSON.stringify(countryDataArray))
             }
@@ -133,6 +127,6 @@ const handleCountryClick = (e) => {
 }
 
 //event listeners
-inputCountryField.addEventListener('change', handleCountrySearch);
+inputCountryField.addEventListener('input', handleCountrySearch);
 inputRegionSelect.addEventListener('change', handleRegionSelect);
 countriesSection.addEventListener('click', handleCountryClick)
