@@ -80,7 +80,13 @@ const handleRegionSelect = (e) => {
 }
 
 const handleCountryClick = (e) => {
-    //e.preventDefault()
+    e.preventDefault()
+
+    console.log('target')
+    console.log(e.target)
+    console.log('current target')
+    console.log(e.currentTarget)
+
     const clickedEl = e.target.parentElement;
 
     if (clickedEl.matches('.country-card-area')) {
@@ -116,6 +122,8 @@ const handleCountryClick = (e) => {
                 localStorage.setItem('countryDataArray', JSON.stringify(countryDataArray))
             }
         });
+    } else if(e.target === countriesSection) {
+        return;
     }
 
     countriesSection.parentElement.classList.add('page-transition-away');
@@ -130,3 +138,4 @@ const handleCountryClick = (e) => {
 inputCountryField.addEventListener('input', handleCountrySearch);
 inputRegionSelect.addEventListener('change', handleRegionSelect);
 countriesSection.addEventListener('click', handleCountryClick)
+console.log(countriesSection)
