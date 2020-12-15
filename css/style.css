@@ -48,7 +48,7 @@ body {
   width: 100%;
   height: 5rem;
   padding: 0 5rem;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .container.flex-container {
@@ -117,7 +117,7 @@ main {
   border: none;
   color: white;
   padding: 1.5rem 5rem;
-  font-size: 1rem;
+  font-size: 1.5rem;
   width: 40rem;
   border-radius: 10px;
   -webkit-box-shadow: 0px 1px 5px 0px rgba(58, 4, 4, 0.2);
@@ -146,6 +146,10 @@ main {
   left: 1.5rem;
 }
 
+.input-section .input-country .icon-container svg {
+  width: 2rem;
+}
+
 .input-section .region-select {
   background: #2b3945;
   color: white;
@@ -153,7 +157,7 @@ main {
   padding: 1rem 1.5rem;
   border: none;
   border-radius: 10px;
-  font-size: 1rem;
+  font-size: 1.5rem;
   -webkit-box-shadow: 0px 1px 5px 0px rgba(58, 4, 4, 0.2);
           box-shadow: 0px 1px 5px 0px rgba(58, 4, 4, 0.2);
 }
@@ -169,8 +173,8 @@ main {
 .countries .countries-list {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(100px, 350px))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(100px, 350px));
+  -ms-grid-columns: (minmax(350px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -189,24 +193,26 @@ main {
   transition: all 0.2s;
   -ms-grid-column-align: center;
       justify-self: center;
+  max-height: 50rem;
+  max-width: 40rem;
 }
 
 .countries .countries-list .country-card-area {
   text-decoration: none;
-  width: 100%;
-  height: 50%;
   color: white;
 }
 
 .countries .countries-list .country-card-flag {
   width: 100%;
   height: 50%;
-  overflow: hidden;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 
 .countries .countries-list .country-card-brief {
+  height: 50%;
   padding: 1rem 1.3rem 3rem 1.3rem;
 }
 
@@ -265,10 +271,16 @@ main {
   border-radius: 10px;
 }
 
+.country-container {
+  max-width: 150rem;
+}
+
 .country-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   font-size: 1.6rem;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
@@ -279,8 +291,10 @@ main {
 }
 
 .country-info__flag img {
-  height: 30rem;
-  width: 50rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: 80rem;
+  width: 90%;
 }
 
 .country-info__data {
